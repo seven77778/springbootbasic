@@ -41,6 +41,12 @@
 			<scope>test</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>22.0</version>
+		</dependency>
+
 		<!-- test，只在测试时使用，用于编译和运行测试代码。不会随项目发布 -->
 	</dependencies>
 

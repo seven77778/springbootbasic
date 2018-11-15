@@ -46,6 +46,7 @@ public class TestForListener {
 
     @Test
     public void testForStrategy(){
+        payService.ss();
         System.out.println(payService.payDiscount("vip",100));
     }
 

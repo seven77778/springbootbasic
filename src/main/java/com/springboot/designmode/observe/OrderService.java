@@ -1,5 +1,7 @@
 package com.springboot.designmode.observe;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
@@ -12,10 +14,10 @@ import org.springframework.stereotype.Component;
  *
  * spring observe -- 观察者模式
  */
-@Component
+@Component("orderService")
 public class OrderService {
 
-    @Autowired
+    @Resource
     ApplicationContext applicationContext;
 
     public void createOrder(){

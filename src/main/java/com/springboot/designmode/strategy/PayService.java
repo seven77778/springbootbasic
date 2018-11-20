@@ -7,6 +7,7 @@ import java.util.Map;
 import com.google.common.collect.Maps;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by LSH on 2018/11/14.
@@ -25,11 +26,11 @@ List<IDiscount> discounts = new ArrayList<>();  -- 初始化顺序？
  * 构造方法先于 @service执行，通过构造器实例化的bean，才能注入啊
  *
  */
-@Component
+@Component("pay")
 public class PayService {
 
 
-    Map<String, IDiscount> map = Maps.newHashMap();
+    static Map<String, IDiscount> map = Maps.newHashMap();
 
     @Autowired
     List<IDiscount> discounts = new ArrayList<>();
@@ -46,14 +47,8 @@ public class PayService {
         System.out.println("youcan");
     }
 
-    //通过ss 方法执行初始化
-    //public void ss() {
-    //    for (IDiscount iDiscount : discounts) {
-    //        map.put(iDiscount.getType(), iDiscount);
-    //    }
-    //}
 
-    public double payDiscount(String type, double cost){
+    public  double payDiscount(String type, double cost){
         System.out.println(map.size());
         return map.get(type).discount(cost);
     }

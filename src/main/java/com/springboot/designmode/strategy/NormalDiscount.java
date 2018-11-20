@@ -1,4 +1,4 @@
-package com.springboot.basic.strategy;
+package com.springboot.designmode.strategy;
 
 import org.springframework.stereotype.Service;
 
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
  * @author LSH
  * @date 2018/11/14
  */
-//@Service
+@Service
 public class NormalDiscount implements IDiscount {
     @Override
     public String getType() {

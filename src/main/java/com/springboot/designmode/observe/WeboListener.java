@@ -1,4 +1,4 @@
-package com.springboot.basic.listener;
+package com.springboot.designmode.observe;
 
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;

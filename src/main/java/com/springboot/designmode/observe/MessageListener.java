@@ -1,8 +1,7 @@
-package com.springboot.basic.listener;
+package com.springboot.designmode.observe;
 
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
 
 /**
  * Created by lsh on 2018/11/14 11:36.

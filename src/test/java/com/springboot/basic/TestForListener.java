@@ -1,16 +1,12 @@
 package com.springboot.basic;
 
-import com.springboot.basic.listener.OrderService;
-import com.springboot.basic.strategy.IDiscount;
-import com.springboot.basic.strategy.PayService;
+import com.springboot.designmode.observe.OrderService;
+import com.springboot.designmode.strategy.PayService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by lsh on 2018/11/14 11:58.
@@ -46,7 +42,6 @@ public class TestForListener {
 
     @Test
     public void testForStrategy(){
-        payService.ss();
         System.out.println(payService.payDiscount("vip",100));
     }
 

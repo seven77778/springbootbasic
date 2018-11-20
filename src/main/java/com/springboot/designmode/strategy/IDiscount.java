@@ -1,4 +1,4 @@
-package com.springboot.basic.strategy;
+package com.springboot.designmode.strategy;
 
 /**
  * Created by LSH on 2018/11/14.

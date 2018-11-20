@@ -1,4 +1,4 @@
-package com.springboot.basic.strategy;
+package com.springboot.designmode.strategy;
 
 import org.springframework.stereotype.Service;
 
@@ -9,15 +9,15 @@ import org.springframework.stereotype.Service;
  * @date 2018/11/14
  */
 @Service
-public class VipDiscount implements IDiscount {
+public class SvipDiscount implements IDiscount {
     @Override
     public String getType() {
-        return "vip";
+        return "svip";
     }
 
     @Override
     public Double discount(  double cost) {
-        System.out.println("use VipDiscount");
-        return cost * 0.8;
+        System.out.println("use SvipDiscount");
+        return cost * 0.5;
     }
 }

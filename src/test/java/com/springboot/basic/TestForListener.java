@@ -1,10 +1,6 @@
 package com.springboot.basic;
 
-import javax.annotation.Resource;
-
-import com.springboot.designmode.observe.OrderService;
-import com.springboot.designmode.strategy.PayService;
-import org.junit.Test;
+import com.springboot.DemoApplication;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;

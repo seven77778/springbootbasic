@@ -11,7 +11,7 @@
 
 	<!--基本信息-->
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.springboot.basic</groupId>
+	<groupId>com</groupId>
 	<artifactId>demo</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
@@ -24,6 +24,8 @@
 		<module>demo-service</module>
 		<module>demo-web</module>
 		<module>demo-dubbo-api</module>
+		<module>demo-dubbo-provider</module>
+		<module>demo-dubbo-consumer</module>
 	</modules>
 
 
@@ -70,12 +72,38 @@
 			<artifactId>dubbo-spring-boot-starter</artifactId>
 			<version>0.2.0</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+			<version>${zookeeper.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.github.sgroschupf</groupId>
+			<artifactId>zkclient</artifactId>
+			<version>${zkclient.version}</version>
+		</dependency>
+
 	</dependencies>
 
 
-	<dependencyManagement>
-
+<dependencyManagement>
 		<dependencies>
+			<!--子moudel-->
 			<dependency>
 				<groupId>com.springboot.basic</groupId>
 				<artifactId>demo-web</artifactId>
@@ -96,44 +124,21 @@
 				<artifactId>demo-dubbo-api</artifactId>
 				<version>${version}</version>
 			</dependency>
-
 			<dependency>
-				<groupId>org.apache.zookeeper</groupId>
-				<artifactId>zookeeper</artifactId>
-				<version>${zookeeper.version}</version>
-				<exclusions>
-					<exclusion>
-						<groupId>log4j</groupId>
-						<artifactId>log4j</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.slf4j</groupId>
-						<artifactId>slf4j-api</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.slf4j</groupId>
-						<artifactId>slf4j-log4j12</artifactId>
-					</exclusion>
-				</exclusions>
+				<groupId>com.springboot.basic</groupId>
+				<artifactId>demo-dubbo-provider</artifactId>
+				<version>${version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.github.sgroschupf</groupId>
-				<artifactId>zkclient</artifactId>
-				<version>${zkclient.version}</version>
+				<groupId>com.springboot.basic</groupId>
+				<artifactId>demo-dubbo-consumer</artifactId>
+				<version>${version}</version>
 			</dependency>
-
-
-
-
 
 		</dependencies>
 	</dependencyManagement>
 
 	<build>
-
-		<filters>
-			<filter>../demo-web/src/main/resources/dubbo.properties</filter>
-		</filters>
 
 		<plugins>
 			<plugin>
